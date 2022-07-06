@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <!-- 引入css-cdn的文件 -->
+    <% for(var css of htmlWebpackPlugin.options.cdn.css) { %>
+    <link rel="stylesheet" href="<%=css%>">
+    <% } %>
+    <style>
+      .ring-1 {
+        width: 10px;
+        height: 10px;
+        margin: 0 auto;
+        padding: 10px;
+        border: 7px dashed #4b9cdb;
+        border-radius: 100%;
+      }
+
+      .loading .ring-1 {
+        animation: loadingD 1.5s 0.3s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+      }
+
+      @keyframes loadingD {
+        0 {
+          transform: rotate(0deg);
+        }
+
+        50% {
+          transform: rotate(180deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+    </noscript>
+    <!-- 放置js-cdn文件 -->
+    <% for(var js of htmlWebpackPlugin.options.cdn.js) { %>
+    <script src="<%=js%>"></script>
+    <% } %>
+    <div id="app">
+      <div id="loading" class="loading">
+        <div class="ring-1"></div>
+      </div>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+
+</html>
