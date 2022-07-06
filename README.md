@@ -1,24 +1,6 @@
-# vue-demo
+# vue-cli-demo
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. [x] 路由懒加载
+2. [x] 按需加载组件
+3. [x] element-ui cdn 引入
+4. [ ] eslint 参数修改 
